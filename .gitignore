@@ -1,0 +1,13 @@
+
+# gpx data files and folder
+data/
+*\.gpx
+
+# object files and other intermediates, other output
+*\.output
+
+# folder for test stuff
+test/
+
+# tinyxml files
+tinyxml/
