@@ -1,9 +1,19 @@
 #!/bin/bash
-
 clear
 
-#g++ -g -Wall -pedantic -I/opt/include -L/opt/lib parser.cpp -DMAIN_TEST -o parser -lxerces-c | tee compile.text
+RLexe=RunlogImport.x
+#xmldata=sample.xml
+xmldata=test.gpx
 
-g++ -g -Wall -pedantic -I/opt/include -L/opt/lib MySAXHandler.cpp MySAXParser.cpp -o MySAXParser -lxerces-c
+# Delete old executable
+[ -f "$RLexe" ] && rm ./$RLexe
+
+g++ -g -Wall -pedantic -I/opt/include -L/opt/lib RunlogImport.cpp RunlogImportHandlers.cpp -o $RLexe -lxerces-c
 # -DMAIN_TEST
 # >(tee compile.output)
+
+echo ""
+ls -lt
+echo ""
+
+[ -f "$RLexe" ] && ./$RLexe $xmldata

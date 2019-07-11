@@ -5,9 +5,17 @@ data/
 
 # object files and other intermediates, other output
 *\.output
+*\.o
+*\.exe
 
 # folder for test stuff
 test/
+
+# folder for samples and examples stuff
+samples/
+
+# folder for reference material
+reference/
 
 # tinyxml files
 tinyxml/
